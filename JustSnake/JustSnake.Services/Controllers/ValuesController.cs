@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace JustSnake.Server.Controllers
+namespace JustSnake.Services.Controllers
 {
     [Route("api/[controller]")]
     public class ValuesController : Controller

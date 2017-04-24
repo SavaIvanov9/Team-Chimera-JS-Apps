@@ -1,19 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-
-namespace JustSnake.Server
+﻿namespace JustSnake.Services
 {
+    using JustSnake.Data;
+    using JustSnake.Data.Abstraction;
+    using JustSnake.Services.StartupConfigs;
+    using Microsoft.AspNetCore.Builder;
+    using Microsoft.AspNetCore.Hosting;
+    using Microsoft.Extensions.Configuration;
+    using Microsoft.Extensions.DependencyInjection;
+    using Microsoft.Extensions.Logging;
+
     public class Startup
     {
         public Startup(IHostingEnvironment env)
         {
+            DatabaseConfig.Initizlize();
+
             var builder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
@@ -28,6 +29,7 @@ namespace JustSnake.Server
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
+            services.AddTransient<IJustSnakeData, JustSnakeData>();
             services.AddMvc();
         }
 
