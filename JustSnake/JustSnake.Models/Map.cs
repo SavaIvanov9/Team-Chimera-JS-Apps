@@ -25,7 +25,7 @@
         public string Name { get; set; }
 
         [Required]
-        public MemoryStream Content { get; set; }
+        public byte[] Content { get; set; }
 
         [Required]
         [MaxLength(50)]
