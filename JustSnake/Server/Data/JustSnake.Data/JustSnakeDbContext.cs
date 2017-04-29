@@ -9,8 +9,9 @@
     {
         public JustSnakeDbContext() : base("JustSnake")
         {
-            Database.SetInitializer(
-                new MigrateDatabaseToLatestVersion<JustSnakeDbContext, Configuration>());
+            //Database.SetInitializer(
+            //   new MigrateDatabaseToLatestVersion<JustSnakeDbContext, Configuration>());
+            Database.SetInitializer(new DropCreateDatabaseAlways<JustSnakeDbContext>());
         }
 
         public virtual IDbSet<User> Users { get; set; }

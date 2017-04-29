@@ -5,7 +5,7 @@ namespace JustSnake.Data.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    public sealed class Configuration : DbMigrationsConfiguration<JustSnake.Data.JustSnakeDbContext>
+    public sealed class Configuration : DbMigrationsConfiguration<JustSnakeDbContext>
     {
         public Configuration()
         {

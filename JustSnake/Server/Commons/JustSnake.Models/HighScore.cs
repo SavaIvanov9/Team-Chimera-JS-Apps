@@ -20,12 +20,25 @@
         [Required]
         public long Value { get; set; }
 
-        [Required]
-        public Map Map { get; set; }
+        //[Required]
+        //public Map Map { get; set; }
 
         [Required]
-        public DateTime CreatedOn { get; set; }
+        public User User { get; set; }
 
+        [Required]
+        public DateTime CreatedOn
+        {
+            get
+            {
+                return this.createdOn;
+            }
+            set
+            {
+                this.createdOn = value;
+            }
+        }
+        
         [Required]
         public bool IsDeleted { get; set; }
     }

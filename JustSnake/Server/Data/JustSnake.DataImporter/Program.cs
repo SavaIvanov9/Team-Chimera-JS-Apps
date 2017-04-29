@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace JustSnake.DataImporter
+﻿namespace JustSnake.DataImporter
 {
     class Program
     {
         static void Main(string[] args)
         {
+            var engine = new ImporterEngine();
+            engine.Start();
         }
     }
 }

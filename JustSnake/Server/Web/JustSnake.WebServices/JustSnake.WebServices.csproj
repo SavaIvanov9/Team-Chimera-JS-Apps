@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Commons\JustSnake.Models\JustSnake.Models.csproj" />
+    <ProjectReference Include="..\..\Data\JustSnake.DataImporter\JustSnake.DataImporter.csproj" />
     <ProjectReference Include="..\..\Data\JustSnake.Data\JustSnake.Data.csproj" />
   </ItemGroup>
 

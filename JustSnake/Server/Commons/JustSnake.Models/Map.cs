@@ -1,6 +1,7 @@
 ﻿namespace JustSnake.Models
 {
     using System;
+    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.IO;
@@ -9,11 +10,13 @@
     {
         private DateTime createdOn;
         private bool isDeleted;
-        
+        //private ICollection<HighScore> highScores;
+
         public Map()
         {
             this.createdOn = DateTime.Now;
             this.isDeleted = false;
+            //this.highScores = new HashSet<HighScore>();
         }
 
         [Key]
@@ -27,7 +30,6 @@
         [Required]
         public byte[] Content { get; set; }
 
-        [Required]
         [MaxLength(50)]
         public string Description { get; set; }
 
@@ -58,5 +60,17 @@
                 this.isDeleted = value;
             }
         }
+
+        //public ICollection<HighScore> HighScores
+        //{
+        //    get
+        //    {
+        //        return this.highScores;
+        //    }
+        //    set
+        //    {
+        //        this.highScores = value;
+        //    }
+        //}
     }
 }
