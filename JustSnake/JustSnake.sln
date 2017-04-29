@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26228.9
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{51C6D519-7DF8-4FBA-A357-3F570E58B4FC}"
 	ProjectSection(SolutionItems) = preProject
-		Index.html = Index.html
+		Client\Index.html = Client\Index.html
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{F1E180D1-2ED4-43B3-AD29-18B47ACD152C}"
