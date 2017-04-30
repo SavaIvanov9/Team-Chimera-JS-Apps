@@ -1,0 +1,1 @@
+npm install -g http-server -> http-server ./ -p8181 //портът е допълнителен//
