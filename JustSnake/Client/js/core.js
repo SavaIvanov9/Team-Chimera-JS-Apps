@@ -1,6 +1,9 @@
-import { test } from "test"
+import { test } from "test";
+import { routeManager } from "routeManager";
 
-test();
+routeManager.start();
+
+//test();
 
 // alert("asd");
 // console.log("kurec");
