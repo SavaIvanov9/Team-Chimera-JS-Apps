@@ -1,6 +1,4 @@
-function Router() {
-
-}
+function Router() { }
 
 Router.prototype.init = function(url, callback){
     this.url = url;
@@ -8,7 +6,7 @@ Router.prototype.init = function(url, callback){
 };
 
 function test() {
-    
+
 }
 
 function getRouter() {

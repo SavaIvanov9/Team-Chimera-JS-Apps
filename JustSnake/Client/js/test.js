@@ -1,6 +1,6 @@
-
 function test() {
-    alert(123);
+    alert("Test module started");
+    console.log("Test module started");
 }
 
 export { test }

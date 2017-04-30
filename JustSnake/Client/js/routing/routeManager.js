@@ -1,3 +1,5 @@
+import { test } from "test";
+
 const routeManager = (function() {
 
 function start() {
@@ -5,7 +7,9 @@ function start() {
     let sammy = Sammy(function () {
 
         this.get('#/test', function() {
-            alert("route code");
+            alert("Test route started");
+            console.log("Test route started")
+            test();
         });
     });
 
