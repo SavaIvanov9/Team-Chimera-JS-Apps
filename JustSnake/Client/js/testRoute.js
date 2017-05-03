@@ -2,7 +2,7 @@ function testRoute() {
 
     alert("loading test route...");
 
-    let root = $( "#container" );
+    let root = $("#container");
     root.empty();
     
     root.append("test route");

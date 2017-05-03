@@ -17,10 +17,10 @@ function start() {
             testRoute();
         });
 
-        this.get('#/login', function() {
+        this.get('#/', (sammy) => sammy.redirect('#/login'));
 
-            loadLogin();
-        });
+        this.get('#/login', () => { loadLogin() });
+
     });
 
     $(function () {
