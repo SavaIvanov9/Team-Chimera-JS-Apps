@@ -13,6 +13,9 @@ SystemJS.config({
   'login': 'js/routing/screens/login.js',
   'routeManager': 'js/routing/routeManager.js',
 
+  //controllers
+  'contentController': 'js/controllers/contentController.js',
+
   // app start script
   'core': 'js/core.js'
  }
