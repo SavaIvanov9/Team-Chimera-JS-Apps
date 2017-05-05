@@ -1,7 +1,7 @@
 import { test } from "test";
 import { testRoute } from "testRoute";
 
-import { loadLogin } from "login";
+import { screenSelector } from "screenSelector";
 
 const routeManager = (function() {
 
@@ -19,8 +19,9 @@ function start() {
 
         this.get('#/', (sammy) => sammy.redirect('#/login'));
 
-        this.get('#/login', () => { loadLogin() });
-
+        this.get('#/login', () => { screenSelector.loadLogin() });
+        this.get('#/game', () => { screenSelector.loadGameScreen() });
+        this.get('#/end', () => { screenSelector.loadEndScreen() });
     });
 
     $(function () {

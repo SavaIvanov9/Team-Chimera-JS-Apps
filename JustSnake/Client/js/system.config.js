@@ -6,16 +6,17 @@ SystemJS.config({
   'plugin-babel': 'node_modules/systemjs-plugin-babel/plugin-babel.js',
   'systemjs-babel-build': 'node_modules/systemjs-plugin-babel/systemjs-babel-browser.js',
 
-  // modules
+  // app logic scripts
   'test': 'js/test.js',
   'testRoute': 'js/testRoute.js',
 
-  'login': 'js/routing/screens/login.js',
   'routeManager': 'js/routing/routeManager.js',
-  'requester': 'js/requester.js',
+  'contentLoader': 'js/routing/screens/contentLoader.js',
+  'screenSelector': 'js/routing/screens/screenSelector.js',
+    
+  'requestManager': 'js/tools/requestManager.js',
 
   //controllers
-  'contentController': 'js/controllers/contentController.js',
 
   // app start script
   'core': 'js/core.js'

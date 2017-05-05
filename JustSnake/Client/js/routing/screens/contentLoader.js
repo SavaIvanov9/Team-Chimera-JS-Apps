@@ -1,6 +1,6 @@
-import * as requester from 'requester';
+import { requestManager } from 'requestManager';
 
-class ContentController {
+class ContentLoader {
 
     setHtml(fileName, element) {
         if(fileName == null) {
@@ -11,12 +11,12 @@ class ContentController {
             element = "#container";
         }
 
-        return requester.get(`html/${fileName}.html`)
+        return requestManager.get(`html/${fileName}.html`)
             .then(html => {
                 $(element).html(html);
             }).catch(console.log);
     }
 }
 
-const contentController = new ContentController();
-export { contentController };
+const contentLoader = new ContentLoader();
+export { contentLoader };
