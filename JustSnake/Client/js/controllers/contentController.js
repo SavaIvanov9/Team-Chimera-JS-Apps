@@ -1,14 +1,6 @@
+import * as requester from 'requester';
+
 class ContentController {
-
-    getHtml(fileName) {
-        let htmlPath = `html/${fileName}.html`;
-
-        return new Promise((resolve, reject) => {
-            $.get(htmlPath)
-                .done(resolve)
-                .fail(reject);
-        });
-    }
 
     setHtml(fileName, element) {
         if(fileName == null) {
@@ -19,7 +11,7 @@ class ContentController {
             element = "#container";
         }
 
-        return this.getHtml(fileName)
+        return requester.get(`html/${fileName}.html`)
             .then(html => {
                 $(element).html(html);
             }).catch(console.log);

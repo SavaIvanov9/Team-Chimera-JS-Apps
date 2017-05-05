@@ -12,6 +12,7 @@ SystemJS.config({
 
   'login': 'js/routing/screens/login.js',
   'routeManager': 'js/routing/routeManager.js',
+  'requester': 'js/requester.js',
 
   //controllers
   'contentController': 'js/controllers/contentController.js',
