@@ -1,3 +1,3 @@
 import { routeManager } from "routeManager";
 
-routeManager.start();
+routeManager.loadRoutes();

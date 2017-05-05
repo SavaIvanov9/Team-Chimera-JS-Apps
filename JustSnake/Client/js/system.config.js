@@ -7,16 +7,10 @@ SystemJS.config({
   'systemjs-babel-build': 'node_modules/systemjs-plugin-babel/systemjs-babel-browser.js',
 
   // app logic scripts
-  'test': 'js/test.js',
-  'testRoute': 'js/testRoute.js',
-
   'routeManager': 'js/routing/routeManager.js',
   'contentLoader': 'js/routing/screens/contentLoader.js',
   'screenSelector': 'js/routing/screens/screenSelector.js',
-    
   'requestManager': 'js/tools/requestManager.js',
-
-  //controllers
 
   // app start script
   'core': 'js/core.js'

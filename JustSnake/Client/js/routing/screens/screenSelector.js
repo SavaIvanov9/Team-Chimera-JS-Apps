@@ -3,27 +3,28 @@ import { contentLoader } from "contentLoader";
 class ScreenSelector {
     loadHome() {
         alert("Loading Home Screen route...");
-        contentLoader.setHtml("homeScreen");
+        contentLoader.loadHtml();
+        contentLoader.loadController();
     }
 
     loadLogin() {
         alert("Loading Login Screen route...");
-        contentLoader.setHtml("loginScreen");
+        contentLoader.loadHtml("login");
     }
 
     loadRegister() {
         alert("Loading Register Screen route...");
-        contentLoader.setHtml("registerScreen");
+        contentLoader.loadHtml("register");
     }
 
     loadGameScreen() {
         alert("Loading Game Screen route...");
-        contentLoader.setHtml("gameScreen");
+        contentLoader.loadHtml("game");
     }
 
     loadEndScreen() {
         alert("Loading End Screen route...");
-        contentLoader.setHtml("endScreen");
+        contentLoader.loadHtml("end");
     }
 }
 

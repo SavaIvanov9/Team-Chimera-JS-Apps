@@ -2,7 +2,7 @@ import { screenSelector } from "screenSelector";
 
 const routeManager = (function() {
 
-function start() {
+function loadRoutes() {
     
     let sammy = Sammy(function () {
         this.get('#/', (sammy) => sammy.redirect('#/home'));
@@ -19,7 +19,7 @@ function start() {
     })
 }
     
-return { start }
+return { loadRoutes }
 })();
 
 export { routeManager }
