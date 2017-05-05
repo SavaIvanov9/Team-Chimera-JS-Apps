@@ -1,9 +1,19 @@
 import { contentLoader } from "contentLoader";
 
 class ScreenSelector {
+    loadHome() {
+        alert("Loading Home Screen route...");
+        contentLoader.setHtml("homeScreen");
+    }
+
     loadLogin() {
-        alert("Loading login route...");
-        contentLoader.setHtml();
+        alert("Loading Login Screen route...");
+        contentLoader.setHtml("loginScreen");
+    }
+
+    loadRegister() {
+        alert("Loading Register Screen route...");
+        contentLoader.setHtml("registerScreen");
     }
 
     loadGameScreen() {
