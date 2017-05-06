@@ -19,6 +19,16 @@ body {
 }
 
 
+/* Display Score Conrent DIV========================== */
+
+#scoreDisplay {
+    color: mediumvioletred;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bolder;
+}
+
+
 /* NAVIGATION section (Orange sub-field containing the radio buttons)====================== */
 
 #nav {
