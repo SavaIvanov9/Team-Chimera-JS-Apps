@@ -10,12 +10,14 @@
         private DateTime createdOn;
         private bool isDeleted;
         private ICollection<HighScore> highScores;
+        private ICollection<Cookie> cookies;
 
         public User()
         {
             this.createdOn = DateTime.Now;
             this.isDeleted = false;
             this.highScores = new HashSet<HighScore>();
+            this.cookies = new HashSet<Cookie>();
         }
 
         [Key]
@@ -25,6 +27,10 @@
         [MaxLength(50)]
         [Index(IsUnique = true)]
         public string Name { get; set; }
+
+        [Required]
+        [MinLength(5)]
+        public string Password { get; set; }
 
         [Required]
         public DateTime CreatedOn
@@ -63,6 +69,18 @@
             set
             {
                 this.highScores = value;
+            }
+        }
+
+        public ICollection<Cookie> Cookies
+        {
+            get
+            {
+                return this.cookies;
+            }
+            set
+            {
+                this.cookies = value;
             }
         }
     }

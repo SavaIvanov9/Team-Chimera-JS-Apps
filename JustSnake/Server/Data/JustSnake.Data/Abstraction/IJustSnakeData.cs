@@ -10,6 +10,8 @@
 
         MapRepository Maps { get; }
 
+        CookieRepository Cookies { get; }
+
         void SaveChanges();
     }
 }

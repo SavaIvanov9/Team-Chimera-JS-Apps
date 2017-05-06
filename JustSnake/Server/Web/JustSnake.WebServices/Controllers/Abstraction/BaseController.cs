@@ -11,5 +11,10 @@
         }
 
         protected IJustSnakeData Data { get; set; }
+
+        protected bool ValidateCookie(string value)
+        {
+            var cookies = Data.c
+        }
     }
 }

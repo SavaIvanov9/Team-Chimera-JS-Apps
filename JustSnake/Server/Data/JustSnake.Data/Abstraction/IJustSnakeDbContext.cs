@@ -10,6 +10,7 @@
         IDbSet<User> Users { get; set; }
         IDbSet<HighScore> HighScores { get; set; }
         IDbSet<Map> Maps { get; set; }
+        IDbSet<Cookie> Cookies { get; set; }
 
         int SaveChanges();
 

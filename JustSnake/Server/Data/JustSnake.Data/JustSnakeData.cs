@@ -29,6 +29,8 @@
 
         public MapRepository Maps => (MapRepository)this.GetRepository<Map>();
 
+        public CookieRepository Cookies => (CookieRepository)this.GetRepository<Cookie>();
+
         public void SaveChanges()
         {
             this._context.SaveChanges();
@@ -79,6 +81,8 @@
                 type = typeof(HighScoreRepository);
             else if (repositoryType.IsAssignableFrom(typeof(Map)))
                 type = typeof(MapRepository);
+            else if (repositoryType.IsAssignableFrom(typeof(Cookie)))
+                type = typeof(CookieRepository);
         }
     }
 }

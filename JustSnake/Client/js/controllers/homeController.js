@@ -13,8 +13,8 @@ class HomeController {
             data.getUsers().then(
                 (result) => {
                     //var result = JSON.parse(users);
-                    contentLoader.addContent(result);
-                    console.log(result);
+                    contentLoader.addContent(result[0].id);
+                    console.log(result[0].id);
                 }
             );
         });

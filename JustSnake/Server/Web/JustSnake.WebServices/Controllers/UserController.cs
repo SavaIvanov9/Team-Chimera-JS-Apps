@@ -24,5 +24,26 @@ namespace JustSnake.Services.Controllers
 
             return this.Ok(data);
         }
+
+        [EnableCors("MyPolicy")]
+        [HttpGet("ValidateUser")]
+        public IActionResult ValidateUser(string userName, string password)
+        {
+            var user = this.Data.Users
+                .All()
+                .Where(x => x.IsDeleted == false && 
+                            x.Name == userName &&
+                            x.Password == password)
+                .FirstOrDefault();
+
+            if(user == null)
+            {
+                return this.BadRequest("Incorrect username or password");
+            }
+
+            var cookie = $"{user.Name}-{user.Password}";
+
+            return this.Ok(cookie);
+        }
     }
 }

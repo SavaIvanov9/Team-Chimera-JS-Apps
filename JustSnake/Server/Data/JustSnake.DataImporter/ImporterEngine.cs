@@ -35,6 +35,7 @@
             var user = new User
             {
                 Name = "TestUser1",
+                Password = "12345",
                 HighScores = new List<HighScore>
                 {
                 }
