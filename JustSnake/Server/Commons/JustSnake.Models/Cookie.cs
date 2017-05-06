@@ -12,6 +12,9 @@
             this.expirationDate = DateTime.Now.Add(new TimeSpan(1, 0, 0, 0));
         }
 
+        [Key]
+        public long Id { get; set; }
+
         [Required]
         public string Content { get; set; }
 

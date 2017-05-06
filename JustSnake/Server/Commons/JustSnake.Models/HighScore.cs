@@ -23,8 +23,8 @@
         //[Required]
         //public Map Map { get; set; }
 
-        [Required]
-        public User User { get; set; }
+        //[Required]
+        //public User User { get; set; }
 
         [Required]
         public DateTime CreatedOn

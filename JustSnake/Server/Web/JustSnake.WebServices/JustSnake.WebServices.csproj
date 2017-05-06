@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net461</TargetFramework>
+    <TargetFramework>net462</TargetFramework>
     <RuntimeIdentifier>win7-x86</RuntimeIdentifier>
   </PropertyGroup>
 
@@ -19,6 +19,7 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.0" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\JustSnake.Encryptor\JustSnake.Encryptor.csproj" />
     <ProjectReference Include="..\..\Commons\JustSnake.Models\JustSnake.Models.csproj" />
     <ProjectReference Include="..\..\Data\JustSnake.DataImporter\JustSnake.DataImporter.csproj" />
     <ProjectReference Include="..\..\Data\JustSnake.Data\JustSnake.Data.csproj" />

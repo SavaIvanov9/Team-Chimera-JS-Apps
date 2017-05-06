@@ -2,6 +2,7 @@
 {
     using JustSnake.Data;
     using JustSnake.Data.Abstraction;
+    using JustSnake.Encryptor;
     using JustSnake.Services.StartupConfigs;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
@@ -29,6 +30,8 @@
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<IJustSnakeData, JustSnakeData>();
+            services.AddTransient<IEncryptor, Encryptor>();
+
             services.AddMvc();
             //services.AddCors();
             //services.Configure<MvcOptions>(options =>

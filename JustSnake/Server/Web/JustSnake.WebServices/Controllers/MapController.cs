@@ -1,4 +1,5 @@
 ﻿using JustSnake.Data.Abstraction;
+using JustSnake.Encryptor;
 using JustSnake.Services.Controllers.Abstraction;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
@@ -8,7 +9,7 @@ namespace JustSnake.Services.Controllers
     [Route("api/[controller]")]
     public class MapController : BaseController
     {
-        public MapController(IJustSnakeData data) : base(data)
+        public MapController(IJustSnakeData data, IEncryptor encryptor) : base(data, encryptor)
         {
         }
 

@@ -49,8 +49,6 @@
         //            type = typeof(UserRepository);
         //        }
 
-
-
         //        this._repositories.Add(repositoryType, Activator.CreateInstance(type, this._context));
         //    }
 

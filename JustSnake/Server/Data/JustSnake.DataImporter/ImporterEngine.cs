@@ -74,7 +74,7 @@
             {
                 Value = 100,
                 //Map = highscoreMap,
-                User = highscoreUser
+                //User = highscoreUser
             };
 
             highscoreUser.HighScores.Add(highscore);
