@@ -5,6 +5,8 @@
     using JustSnake.Services.StartupConfigs;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.AspNetCore.Mvc.Cors.Internal;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Logging;
@@ -28,6 +30,17 @@
         {
             services.AddTransient<IJustSnakeData, JustSnakeData>();
             services.AddMvc();
+            //services.AddCors();
+            //services.Configure<MvcOptions>(options =>
+            //{
+            //    options.Filters.Add(new CorsAuthorizationFilterFactory("AllowSpecificOrigin"));
+            //});
+            services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
+            {
+                builder.AllowAnyOrigin()
+                       .AllowAnyMethod()
+                       .AllowAnyHeader();
+            }));
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
@@ -36,6 +49,7 @@
             loggerFactory.AddDebug();
 
             app.UseMvc();
+            app.UseCors("MyPolicy");
         }
     }
 }

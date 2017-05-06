@@ -11,6 +11,8 @@ SystemJS.config({
   'contentLoader': 'js/routing/screens/contentLoader.js',
   'screenSelector': 'js/routing/screens/screenSelector.js',
   'requestManager': 'js/tools/requestManager.js',
+  'data': 'js/data/data.js',
+  'homeController': 'js/controllers/homeController.js',
 
   // app start script
   'core': 'js/core.js'

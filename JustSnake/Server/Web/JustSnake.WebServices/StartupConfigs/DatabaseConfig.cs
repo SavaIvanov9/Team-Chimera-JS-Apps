@@ -12,9 +12,9 @@
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<JustSnakeDbContext, Configuration>());
             //Database.SetInitializer(new DropCreateDatabaseAlways<PornBoxDbContext>());
 
-            var importer = new ImporterEngine();
+            //var importer = new ImporterEngine();
 
-            importer.Import();
+            //importer.Import();
         }
     }
 }

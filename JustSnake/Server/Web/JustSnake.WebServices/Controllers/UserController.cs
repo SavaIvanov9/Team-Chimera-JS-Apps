@@ -1,5 +1,6 @@
 ﻿using JustSnake.Data.Abstraction;
 using JustSnake.Services.Controllers.Abstraction;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 
@@ -12,6 +13,7 @@ namespace JustSnake.Services.Controllers
         {
         }
 
+        [EnableCors("MyPolicy")]
         [HttpGet("GetAllUsers")]
         public IActionResult GetAllUsers()
         {

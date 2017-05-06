@@ -7,7 +7,7 @@ class RequestManager {
             headers,
             data: body,
             success: resolve,
-        error: reject
+            error: reject
     }));
 
     return promise;

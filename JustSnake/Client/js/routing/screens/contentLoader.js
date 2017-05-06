@@ -28,6 +28,14 @@ class ContentLoader {
 
         $(element).append(`<script src="js/controllers/${fileName}Controller.js"></script>`);
     }
+
+    addContent(content, element) {
+        if(element == null) {
+            element = "#container";
+        }
+
+        $(element).append(content);
+    }
 }
 
 const contentLoader = new ContentLoader();

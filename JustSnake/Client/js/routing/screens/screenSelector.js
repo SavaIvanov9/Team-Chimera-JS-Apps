@@ -1,10 +1,13 @@
 import { contentLoader } from "contentLoader";
+import { homeController } from "homeController";
 
 class ScreenSelector {
     loadHome() {
         alert("Loading Home Screen route...");
         contentLoader.loadHtml();
-        contentLoader.loadController();
+        //contentLoader.loadController();
+
+        homeController.initialize();
     }
 
     loadLogin() {
@@ -20,6 +23,7 @@ class ScreenSelector {
     loadGameScreen() {
         alert("Loading Game Screen route...");
         contentLoader.loadHtml("game");
+        contentLoader.loadController("game");
     }
 
     loadEndScreen() {
