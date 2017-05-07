@@ -7,7 +7,7 @@ class ScreenSelector {
         alert("Loading Home Screen route...");
         contentLoader.loadHtml();
         //contentLoader.loadController();
-
+        //
         homeController.initialize();
     }
 
