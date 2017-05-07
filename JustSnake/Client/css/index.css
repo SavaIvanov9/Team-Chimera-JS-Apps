@@ -115,3 +115,8 @@ body {
     font-size: 16px;
     overflow: auto;
 }
+
+#gameCanvas {
+    width: auto;
+    height: auto;
+}

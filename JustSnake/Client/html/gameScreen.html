@@ -1,3 +1,63 @@
-<div>
-    <p>This is Game Screen route</p>
+<!-- Top green field-->
+<div class="header">
+    <div id="scoreDisplay"></div>
 </div>
+<!-- Orange sub-field containing the radio buttons-->
+<div id="nav">
+    <div class="col-sm-10">
+        <label class="radio-inline"> <input type="radio" name="season" id="garden"  checked> Garden (easy) </label>
+        <label class="radio-inline"> <input type="radio" name="season" id="winter" > Winter (normal)</label>
+        <label class="radio-inline"> <input type="radio" name="season" id="egypt"> Egypt (pro) </label>
+    </div>
+</div>
+<!-- Left sidebar section-->
+<div class=" sidebar ">
+    <!-- top left box containing drop down info boards-->
+    <div id="panels">
+        <h2> &nbsp Snake Stories</h2>
+        <div>
+            Naga, in Hinduism, Buddhism, and Jainism, is a member of a class of mythical semidivine beings, half human and half cobra.
+        </div>
+
+        <h2> &nbsp How to Play</h2>
+        <div>
+            The Ancient Greeks fought several wars against Persia. One of the most famous Greeks was Pericles.
+        </div>
+
+        <h2> &nbsp Share Your <br> &nbsp &nbsp &nbsp &nbspAchievments</h2>
+        <div>
+            The Ancient Egyptians build large structures such as the pyramids. One of the most famous Egyptians was Cleopatra.
+        </div>
+    </div>
+    <!-- Left box buttons-->
+    <div class="btn-group-vertical">
+        <button type="button" class="btn btn-primary">Play Now</button>`
+        <button type="button" class="btn btn-primary">Pause</button>`
+        <!-- Trigger the log -in form pop up  -->
+        <button type="button" class="btn btn-primary btn-info btn-lg" data-toggle="modal" data-target="#myModal">Log-In</button>
+        <button type="button" class="btn btn-primary">View Profile</button>
+
+    </div>
+</div>
+<!-- Main window, contains canvas area where actual game zone is displayed-->
+
+<div class="main">
+    <canvas id="gameCanvas" width="584" height="500" style="border:7px solid #8B4513"></canvas>
+
+</div>
+<script>
+    $(document).ready(function() {
+        $("#panels").accordion({
+            collapsible: true
+        }, {
+            animate: 900
+        }, {
+            heightStyle: "content"
+        }, {
+            icons: {
+                header: "ui-icon-zoomin",
+                activeHeader: "ui-icon-zoomout"
+            }
+        });
+    });
+</script>
