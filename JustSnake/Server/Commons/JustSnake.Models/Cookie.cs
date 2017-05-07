@@ -25,7 +25,7 @@
                 return this.expirationDate;
             }
 
-            private set
+            set
             {
                 this.expirationDate = value;
             }

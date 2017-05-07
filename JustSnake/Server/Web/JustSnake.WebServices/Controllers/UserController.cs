@@ -6,9 +6,11 @@ using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace JustSnake.Services.Controllers
 {
+    [EnableCors("MyPolicy")]
     [Route("api/[controller]")]
     public class UserController : BaseController
     {
@@ -44,8 +46,7 @@ namespace JustSnake.Services.Controllers
                 return this.BadRequest("Incorrect username or password");
             }
 
-            var cookie = $"{user.Name}-{user.Password}-{user.Id}";
-            var content = this.EncryptString(cookie);
+            var content = this.CreateCookie(user.Name, user.Password, user.Id);
 
             this.Data.Cookies.Add(new Cookie
             {
@@ -62,14 +63,68 @@ namespace JustSnake.Services.Controllers
         }
 
         [EnableCors("MyPolicy")]
-        [HttpGet("SaveScore")]
-        public IActionResult SaveScore(long value, string cookie)
+        [HttpGet("CreateUser")]
+        public IActionResult CreateUser(string name, string password)
         {
-            var result = this.ValidateCookie(cookie);
+            var duplicateUser = Data.Users
+                .All()
+                .FirstOrDefault(x => x.Name == name);
 
-            if (!result)
+            if (duplicateUser != null)
+            {
+                return this.BadRequest("Username already exists!");
+            }
+
+            if (password.Length < 5)
+            {
+                return this.BadRequest("Password must be atleast 5 symbols");
+            }
+
+            var user = new User
+            {
+                Name = name,
+                Password = password,
+                CreatedOn = DateTime.Now,
+                IsDeleted = false
+            };
+
+            Data.Users.Add(user);
+            Data.SaveChanges();
+
+            var userId = Data.Users
+                .All()
+                .FirstOrDefault(x => x.Name == name && x.Password == password).Id;
+
+            var content = this.CreateCookie(user.Name, user.Password, user.Id);
+
+            this.Data.Cookies.Add(new Cookie
+            {
+                Content = content,
+            });
+
+            this.Data.SaveChanges();
+
+            return this.Ok(content);
+        }
+
+        [EnableCors("MyPolicy")]
+        [HttpGet("SaveScore")]
+        public IActionResult SaveScore(long value/*, string cookie*/)
+        {
+            //cookie = cookie.Trim();
+
+            //cookie = cookie.Replace(" ", "");
+
+            var cookie = Request.Headers.FirstOrDefault(x => x.Key == "Authorization").Value;
+
+            if (!this.ValidateCookie(cookie))
             {
                 return this.BadRequest("Invalid cookie!");
+            }
+
+            if (!this.ExtendCookie(cookie))
+            {
+                return this.BadRequest("Could not extend cookie!");
             }
 
             var decryptedCookie = this.DecryptString(cookie);

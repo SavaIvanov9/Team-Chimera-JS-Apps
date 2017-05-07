@@ -29,7 +29,7 @@
         public string Name { get; set; }
 
         [Required]
-        [MinLength(5)]
+        //[MinLength(5)]
         public string Password { get; set; }
 
         [Required]
