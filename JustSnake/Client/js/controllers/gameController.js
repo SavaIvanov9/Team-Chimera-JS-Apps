@@ -1,7 +1,11 @@
-(function() {
-    alert("game controller works");
+import { contentLoader } from "contentLoader";
+import { data } from "data";
 
-    // $( "#signout-btn" ).on( "click", function() {
-    //     alert("it works");
-    // });
-})();
+class GameController {
+    initialize() {
+        alert("game controller works")
+    }
+}
+
+const gameController = new GameController();
+export { gameController };

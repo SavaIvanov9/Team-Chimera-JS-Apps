@@ -1,5 +1,6 @@
 import { contentLoader } from "contentLoader";
 import { homeController } from "homeController";
+import { gameController } from "gameController";
 
 class ScreenSelector {
     loadHome() {
@@ -23,7 +24,7 @@ class ScreenSelector {
     loadGameScreen() {
         alert("Loading Game Screen route...");
         contentLoader.loadHtml("game");
-        contentLoader.loadController("game");
+        gameController.initialize();
     }
 
     loadEndScreen() {

@@ -13,7 +13,7 @@ SystemJS.config({
         'requestManager': 'js/tools/requestManager.js',
         'data': 'js/data/data.js',
         'homeController': 'js/controllers/homeController.js',
-
+        'gameController': 'js/controllers/gameController.js',
 
         // app start script
         'core': 'js/core.js'
