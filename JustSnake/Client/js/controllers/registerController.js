@@ -3,7 +3,6 @@ import { data } from "data";
 
 class RegisterController {
     initialize() {
-        //alert(121231242342);
         setTimeout(function(){ 
             $("#register-button").click(function() {
             var name = $("#user").val();

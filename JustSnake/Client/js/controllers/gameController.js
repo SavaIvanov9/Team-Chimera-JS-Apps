@@ -1,5 +1,6 @@
 import { contentLoader } from "contentLoader";
 import { data } from "data";
+import { localStorageManager } from "localStorageManager";
 
 class GameController {
     initialize(sammy) {
@@ -88,14 +89,15 @@ class GameController {
                 if (snakeX == -1 || snakeX >= (($width - 4) / 10) || snakeY == -1 || snakeY >= ($height) / defaultSize || checkCollision(snakeX, snakeY, snake)) {
                     //restart game
                     // btn.removeAttribute('disabled', true);
-                    sammy.redirect('#/end');
-                    
+                    localStorageManager.storeScore(score);
+
                     ctx.clearRect(0, 0, $width, $height);
 
                     gameloop = clearInterval(gameloop);
                     ctx.font = "80px  Georgia";
                     ctx.fillStyle = "black";
                     ctx.fillText('Game Over!', $width / 5, $height / 2);
+                    sammy.redirect('#/end');
                 }
 
                 if (snakeX == food.x && snakeY == food.y) {
@@ -194,13 +196,7 @@ class GameController {
             }
             init()
 
-            function storeScore(score) {
-                localStorage.setItem("currentScore", score)
-            }
-
-            function getScore() {
-                return +(localStorage.getItem("currentScore"));
-            }
+            
         });
     }
 }

@@ -14,6 +14,7 @@ SystemJS.config({
         'contentLoader': 'js/routing/screens/contentLoader.js',
         'screenSelector': 'js/routing/screens/screenSelector.js',
         'requestManager': 'js/tools/requestManager.js',
+        'localStorageManager': 'js/tools/localStorageManager.js',
         'data': 'js/data/data.js',
         'homeController': 'js/controllers/homeController.js',
         'loginController': 'js/controllers/loginController.js',
