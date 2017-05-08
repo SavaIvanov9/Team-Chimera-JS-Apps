@@ -136,3 +136,16 @@ body {
     border: 2px solid black;
     margin-left: 140px;
 }
+
+
+/*#fb-root( End Screens)========================================= */
+
+#fb-root {
+    margin-top: 180px;
+}
+
+#test {
+    background-image: url("../resources/Pics/snake.jpg");
+    background-repeat: no-repeat;
+    background-position: right top;
+}
