@@ -3,25 +3,36 @@ import { data } from "data";
 
 class EndController {
     initialize() {
+        let currentScore = 350;
         alert("End controller works");
 
         setTimeout(function(){ 
             $(document).ready(function() {
-                contentLoader.addContent("Test score: 300", "current-score");
+                contentLoader.addContent(currentScore, "current-score");
             });
         
-            contentLoader.addContent("Test score: 300");
+            contentLoader.addContent(currentScore);
 
-            alert("End controller works 2");
+            //alert("End controller works 2");
         
-            data.getUsers().then(
+            data.getUserScores().then(
                 (result) => {
                     //var result = JSON.parse(users);
-                    contentLoader.addContent(result[0].id);
-                    console.log(result[0].id);
+                    for(let i = 0; i < result.length; i++) {
+                        contentLoader.addContent(result[i].value);
+                        console.log(result[i].value);
+                    }
                 }
-            );   
-        }, 1000);
+            );  
+
+            $( "#save-btton" ).on( "click", function() {
+                data.saveScore(currentScore).then(
+                (result) => {
+                    console.log(result);
+                }
+            ); 
+            });
+        }, 100);
     }
 }
 
