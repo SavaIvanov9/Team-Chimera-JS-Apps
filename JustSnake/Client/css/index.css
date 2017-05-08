@@ -144,8 +144,8 @@ body {
     margin-top: 180px;
 }
 
-#test {
-    background-image: url("../resources/Pics/snake.jpg");
+.modal-content {
+    background-image: url("../resources/Pics/snake1.jpg");
     background-repeat: no-repeat;
-    background-position: right top;
+    background-position: center top;
 }
