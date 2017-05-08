@@ -7,14 +7,14 @@ class EndController {
         let currentScore = localStorageManager.getScore();
 
         $(document).ready(function() {
-            contentLoader.addContent(currentScore, "current-score");
-        
-            contentLoader.addContent(currentScore);     
+            contentLoader.addContent(currentScore, "#current-score");
+            //$( "#current-score" ).append( currentScore );
+
             data.getUserScores(sammy).then(
                 (result) => {
                     //var result = JSON.parse(users);
                     for(let i = 0; i < result.length; i++) {
-                        contentLoader.addContent(result[i].value);
+                        contentLoader.addContent(`<p>Score: ${result[i].value}  -  Created on: ${result[i].createdOn}`, "#score-list");
                         console.log(result[i].value);
                     }
                 }
@@ -23,7 +23,7 @@ class EndController {
             $( "#save-btton" ).on( "click", function() {
                 data.saveScore(currentScore, sammy).then(
                     (result) => {
-                        contentLoader.addContent("</br><p>Score saved</p>")
+                        alert("Score saved! ");
                         console.log(result);
                     }
                 ); 

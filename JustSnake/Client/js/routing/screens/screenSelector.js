@@ -32,25 +32,27 @@ class ScreenSelector {
     }
 
     loadGameScreen(sammy) {
-         var isUserLogedIn = authenticator.redirectIfNotLogedIn(sammy);
+        //  var isUserLogedIn = authenticator.redirectIfNotLogedIn(sammy);
          
-         if(isUserLogedIn) {
+        //  if(isUserLogedIn === "true") {
             contentLoader.loadHtml("game")
                 .then(() => { 
                     gameController.initialize(sammy);
                 }
             );
-         }
+         //}
     }
 
     loadEndScreen(sammy) {
-        authenticator.redirectIfNotLogedIn(sammy).then(
+        // var isUserLogedIn = authenticator.redirectIfNotLogedIn(sammy);
+
+        // if(isUserLogedIn === "true") {
             contentLoader.loadHtml("end")
                 .then(() => { 
                     endController.initialize(sammy);
                 }
-            )
-        );
+            );
+        //} 
     }
 }
 

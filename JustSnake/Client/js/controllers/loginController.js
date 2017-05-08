@@ -5,7 +5,6 @@ import { localStorageManager } from "localStorageManager";
 class LoginController {
     initialize() {
         $(document).ready(function() {
-
             $("#log-in-button").click(function() {
                 var name = $("#user").val();
                 //var email = $("#pwd").val();

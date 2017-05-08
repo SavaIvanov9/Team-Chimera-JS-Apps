@@ -4,16 +4,7 @@ import { localStorageManager } from "localStorageManager";
 
 class GameController {
     initialize(sammy) {
-        let isUserLogedIn = localStorage.getItem("IsUserLogedIn");
-            console.log(isUserLogedIn);
-            
-            if(isUserLogedIn == null || isUserLogedIn == false) {
-                sammy.redirect('#/home');
-            }
-            
         $(document).ready(function(){
-            
-
             let $mycanvas = $('#gameCanvas')[0]
             let ctx = $('#gameCanvas')[0].getContext('2d')
             let defaultSize = 10
@@ -23,7 +14,6 @@ class GameController {
             let snake, food, direction, gameloop, snakeX, snakeY, tail, keyCode
 
             class gameObject {
-
                 paint(x, y) {
                     ctx.fillStyle = 'white';
                     ctx.fillRect(x * defaultSize, y * defaultSize, defaultSize, defaultSize);
