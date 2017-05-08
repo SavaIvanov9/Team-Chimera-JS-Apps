@@ -1,14 +1,9 @@
 import { contentLoader } from "contentLoader";
 import { data } from "data";
 
-
-
 class GameController {
-    initialize() {
-        setTimeout(function() {
-
-
-
+    initialize(sammy) {
+        $(document).ready(function(){
             let $mycanvas = $('#gameCanvas')[0]
             let ctx = $('#gameCanvas')[0].getContext('2d')
             let defaultSize = 10
@@ -49,17 +44,9 @@ class GameController {
                         }
                     }
                 }
-
             }
 
-
             let dinner = new gameObject()
-
-
-
-
-
-
 
             class ClassSnake {
                 bodySnake(x, y) {
@@ -79,8 +66,6 @@ class GameController {
             }
 
             let mySnake = new ClassSnake()
-
-
 
             function snakeGrowth() {
                 gameArea.setBackground()
@@ -103,7 +88,8 @@ class GameController {
                 if (snakeX == -1 || snakeX >= (($width - 4) / 10) || snakeY == -1 || snakeY >= ($height) / defaultSize || checkCollision(snakeX, snakeY, snake)) {
                     //restart game
                     // btn.removeAttribute('disabled', true);
-
+                    sammy.redirect('#/end');
+                    
                     ctx.clearRect(0, 0, $width, $height);
 
                     gameloop = clearInterval(gameloop);
@@ -130,7 +116,6 @@ class GameController {
                 }
 
                 dinner.paint(food.x, food.y);
-
             }
 
             let checkCollision = function(x, y, array) {
@@ -141,12 +126,9 @@ class GameController {
                 return false;
             }
 
-
-
             // Image used for gameArea background
             let $areaPic = $(document.createElement('img'))[0];
             $areaPic.src = "resources/Pics/base.jpg";
-
 
             class Area {
                 constructor(source) {
@@ -160,7 +142,6 @@ class GameController {
 
             let gameArea = new Area($areaPic)
 
-
             var init = function() {
                 direction = 'right';
                 mySnake.drawSnake();
@@ -169,18 +150,17 @@ class GameController {
 
             }
 
-
-
             let $scoreDisplay = $("#scoreDisplay");
             $scoreDisplay.html("Current Score: " + score)
 
             document.onkeydown = function(event) {
 
-                keyCode = window.event.keyCode;
-                keyCode = event.keyCode;
+                //keyCode = window.event.keyCode ;
+                //keyCode = event.keyCode || event.which;
+                keyCode = event.which;
 
+                //setTimeout(() => {
                 switch (keyCode) {
-
                     case 37:
                         if (direction != 'right') {
                             direction = 'left';
@@ -208,10 +188,11 @@ class GameController {
                             console.log('down');
                         }
                         break;
+                        
                 }
+                //}, 200);
             }
             init()
-
 
             function storeScore(score) {
                 localStorage.setItem("currentScore", score)
@@ -220,15 +201,8 @@ class GameController {
             function getScore() {
                 return +(localStorage.getItem("currentScore"));
             }
-
-            /* Displaying score in html */
-
-
-
-        }, 100)
-
+        });
     }
-
 }
 const gameController = new GameController();
 export { gameController };

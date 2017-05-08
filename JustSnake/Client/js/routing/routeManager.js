@@ -7,11 +7,11 @@ function loadRoutes() {
     let sammy = Sammy(function () {
         this.get('#/', (sammy) => sammy.redirect('#/home'));
 
-        this.get('#/home', () => { screenSelector.loadHome() });
-        this.get('#/login', () => { screenSelector.loadLogin() });
-        this.get('#/register', () => { screenSelector.loadRegister() });
-        this.get('#/game', () => { screenSelector.loadGameScreen() });
-        this.get('#/end', () => { screenSelector.loadEndScreen() });
+        this.get('#/home', screenSelector.loadHome);
+        this.get('#/login', screenSelector.loadLogin);
+        this.get('#/register', screenSelector.loadRegister);
+        this.get('#/game', screenSelector.loadGameScreen);
+        this.get('#/end', screenSelector.loadEndScreen);
     });
 
     $(function () {

@@ -11,8 +11,8 @@ class ContentLoader {
             element = "#container";
         }
 
-        requestManager.get(`html/${fileName}Screen.html`)
-            .then(html => {
+        return requestManager.get(`html/${fileName}Screen.html`)
+            .then((html) => {
                 $(element).html(html);
             }).catch(console.log);
     }

@@ -6,34 +6,43 @@ import { gameController } from "gameController";
 import { endController } from "endController";
 
 class ScreenSelector {
-    loadHome() {
-        //alert("Loading Home Screen route...");
-        contentLoader.loadHtml();
-        homeController.initialize();
+     loadHome() {
+        contentLoader.loadHtml()
+            .then(() => { 
+                homeController.initialize();
+            }
+        );
     }
 
     loadLogin() {
-        //alert("Loading Login Screen route...");
-        contentLoader.loadHtml("login");
-        loginController.initialize();
+        contentLoader.loadHtml("login")
+            .then(() => { 
+                loginController.initialize();
+            }
+        );       
     }
 
     loadRegister() {
-        //alert("Loading Register Screen route...");
-        contentLoader.loadHtml("register");
-        registerController.initialize();
+        contentLoader.loadHtml("register")
+            .then(() => { 
+                registerController.initialize();
+            }
+        );
     }
 
-    loadGameScreen() {
-        //alert("Loading Game Screen route...");
-        contentLoader.loadHtml("game");
-        gameController.initialize();
+    loadGameScreen(sammy) {
+        contentLoader.loadHtml("game")
+            .then(() => { 
+                gameController.initialize(sammy);
+            }
+        );
     }
 
     loadEndScreen() {
-        //alert("Loading End Screen route...");
-        contentLoader.loadHtml("end");
-        endController.initialize();
+        contentLoader.loadHtml("end")
+            .then(() => { 
+                endController.initialize();
+        });
     }
 }
 
