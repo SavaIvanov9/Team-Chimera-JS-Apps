@@ -17,9 +17,18 @@ SystemJS.config({
         'data': 'js/data/data.js',
         'homeController': 'js/controllers/homeController.js',
         'loginController': 'js/controllers/loginController.js',
-        'registerController': 'js/controllers/registerController.js',       
+        'registerController': 'js/controllers/registerController.js',
         'gameController': 'js/controllers/gameController.js',
         'endController': 'js/controllers/endController.js',
+
+        // object and UI functionalities
+        'variables': 'js/gameFunctions/gameVariables.js',
+        'dinner': 'js/gameFunctions/food.js',
+        'snake': 'js/gameFunctions/classSnake.js',
+        'gameArea': 'js/gameFunctions/gameArea.js',
+        'collision': 'js/gameFunctions/checkCollision.js',
+        'snakeGrowth': 'js/gameFunctions/snakeGrowth.js',
+        'gameInit': 'js/gameFunctions/gameInit.js',
 
         // app start script
         'core': 'js/core.js'
