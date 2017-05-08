@@ -105,8 +105,11 @@ class GameController {
                     // btn.removeAttribute('disabled', true);
 
                     ctx.clearRect(0, 0, $width, $height);
-                    gameloop = clearInterval(gameloop);
 
+                    gameloop = clearInterval(gameloop);
+                    ctx.font = "80px  Georgia";
+                    ctx.fillStyle = "black";
+                    ctx.fillText('Game Over!', $width / 5, $height / 2);
                 }
 
                 if (snakeX == food.x && snakeY == food.y) {

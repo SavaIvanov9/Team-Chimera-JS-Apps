@@ -97,11 +97,12 @@ function snakeGrowth() {
     }
 
     if (snakeX == -1 || snakeX >= ((variables.$width - 4) / 10) || snakeY == -1 || snakeY >= (variables.$height) / variables.defaultSize || checkCollision(snakeX, snakeY, variables.snake)) {
-        //restart game
-        // btn.removeAttribute('disabled', true);
+
 
         variables.ctx.clearRect(0, 0, variables.$width, variables.$height);
+        variables.ctx.text("new dialog title");
         gameloop = clearInterval(gameloop);
+
 
     }
 
