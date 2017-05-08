@@ -4,6 +4,7 @@ import { loginController } from "loginController";
 import { registerController } from "registerController";
 import { gameController } from "gameController";
 import { endController } from "endController";
+import { authenticator } from "authenticator";
 
 class ScreenSelector {
      loadHome() {
@@ -31,18 +32,25 @@ class ScreenSelector {
     }
 
     loadGameScreen(sammy) {
-        contentLoader.loadHtml("game")
-            .then(() => { 
-                gameController.initialize(sammy);
-            }
-        );
+         var isUserLogedIn = authenticator.redirectIfNotLogedIn(sammy);
+         
+         if(isUserLogedIn) {
+            contentLoader.loadHtml("game")
+                .then(() => { 
+                    gameController.initialize(sammy);
+                }
+            );
+         }
     }
 
-    loadEndScreen() {
-        contentLoader.loadHtml("end")
-            .then(() => { 
-                endController.initialize();
-        });
+    loadEndScreen(sammy) {
+        authenticator.redirectIfNotLogedIn(sammy).then(
+            contentLoader.loadHtml("end")
+                .then(() => { 
+                    endController.initialize(sammy);
+                }
+            )
+        );
     }
 }
 

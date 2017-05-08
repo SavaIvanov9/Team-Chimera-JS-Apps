@@ -1,4 +1,5 @@
 import { requestManager } from 'requestManager';
+import { localStorageManager } from "localStorageManager";
 
 class Data {
     getUsers() {
@@ -8,7 +9,7 @@ class Data {
 
     login(username, pass) {
         // return requestManager.get("http://localhost:65259/api/user/CreateUser?name="+username+"&password="+pass);
-        return requestManager.get(` http://localhost:65259/api/user/ValidateUser?userName=${username}&password=${pass}`);
+        return requestManager.get(`http://localhost:65259/api/user/ValidateUser?userName=${username}&password=${pass}`);
         //return requestManager.get(`http://localhost:65259/api/user/CreateUser?name=go6o111&password=go6o111`);
     }
 
@@ -18,12 +19,22 @@ class Data {
         //return requestManager.get(`http://localhost:65259/api/user/CreateUser?name=go6o111&password=go6o111`);
     }
 
-    getUserScores() {
-        return requestManager.get(`http://localhost:65259/api/highscore/GetUserHighScores`, {"Authorization":"9tbHYXOwtKC+4gF9euCXA9TR41XmnUlsWJwIn+lUpL91Y/FPFsy+K/DX/3fy+rkF/5nKoKJRdMeSA2umAPDYz/F5TkTh8liW/4MIVTsgkGzMwVuqlWe3l2m+mWiDrbMk"});
+    getUserScores(sammy) {
+        if(localStorageManager.getIsUserLogedIn()) {
+            return requestManager.get(`http://localhost:65259/api/highscore/GetUserHighScores`, {"Authorization":localStorageManager.getCookie()});
+        }
+        else {
+            sammy.redirect('#/home');
+        }
     }
 
-    saveScore(score) {
-        return requestManager.get(` http://localhost:65259/api/Highscore/SaveScore?value=${score}`, {"Authorization":"9tbHYXOwtKC+4gF9euCXA9TR41XmnUlsWJwIn+lUpL91Y/FPFsy+K/DX/3fy+rkF/5nKoKJRdMeSA2umAPDYz/F5TkTh8liW/4MIVTsgkGzMwVuqlWe3l2m+mWiDrbMk"});
+    saveScore(score, sammy) {
+        if(localStorageManager.getIsUserLogedIn()) {
+            return requestManager.get(`http://localhost:65259/api/Highscore/SaveScore?value=${score}`, {"Authorization":localStorageManager.getCookie()});
+        }
+        else {
+            sammy.redirect('#/home');
+        }
     }
 
 //, "Access-Control-Allow-Origin"

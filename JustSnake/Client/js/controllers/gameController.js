@@ -4,7 +4,16 @@ import { localStorageManager } from "localStorageManager";
 
 class GameController {
     initialize(sammy) {
+        let isUserLogedIn = localStorage.getItem("IsUserLogedIn");
+            console.log(isUserLogedIn);
+            
+            if(isUserLogedIn == null || isUserLogedIn == false) {
+                sammy.redirect('#/home');
+            }
+            
         $(document).ready(function(){
+            
+
             let $mycanvas = $('#gameCanvas')[0]
             let ctx = $('#gameCanvas')[0].getContext('2d')
             let defaultSize = 10
@@ -97,6 +106,7 @@ class GameController {
                     ctx.font = "80px  Georgia";
                     ctx.fillStyle = "black";
                     ctx.fillText('Game Over!', $width / 5, $height / 2);
+
                     sammy.redirect('#/end');
                 }
 
