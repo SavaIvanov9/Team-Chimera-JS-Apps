@@ -145,6 +145,11 @@ body {
 }
 
 .modal-content {
+    margin-top: 180px;
+    border: solid 4px #28b877;
+}
+
+.endScreen {
     background-image: url("../resources/Pics/snake1.jpg");
     background-repeat: no-repeat;
     background-position: center top;
