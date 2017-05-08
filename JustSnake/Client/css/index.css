@@ -96,7 +96,7 @@ body {
 }
 
 .btn-group-vertical>button {
-    margin-bottom: 5px;
+    margin-bottom: 15px;
     border-radius: 10px !important;
 }
 
@@ -119,4 +119,17 @@ body {
 #gameCanvas {
     width: auto;
     height: auto;
+}
+
+
+/*# homeScreen( Game Screens)========================================= */
+
+#homeScreen {
+    background: #00FF7F;
+    border: solid 4px purple;
+    background-image:
+}
+
+.home {
+    border: 2px solid black;
 }

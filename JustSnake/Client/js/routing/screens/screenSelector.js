@@ -6,7 +6,7 @@ import { gameController } from "gameController";
 import { endController } from "endController";
 
 class ScreenSelector {
-     loadHome() {
+    loadHome() {
         //alert("Loading Home Screen route...");
         contentLoader.loadHtml();
         homeController.initialize();
