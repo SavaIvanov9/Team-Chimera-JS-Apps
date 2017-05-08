@@ -13,6 +13,8 @@ SystemJS.config({
         'requestManager': 'js/tools/requestManager.js',
         'data': 'js/data/data.js',
         'homeController': 'js/controllers/homeController.js',
+        'loginController': 'js/controllers/loginController.js',
+        'registerController': 'js/controllers/registerController.js',       
         'gameController': 'js/controllers/gameController.js',
 
         // app start script
