@@ -23,8 +23,11 @@
         //[Required]
         //public Map Map { get; set; }
 
+        [Required]
+        public long UserId { get; set; }
+
         //[Required]
-        //public User User { get; set; }
+        //public virtual User User { get; set; }
 
         [Required]
         public DateTime CreatedOn

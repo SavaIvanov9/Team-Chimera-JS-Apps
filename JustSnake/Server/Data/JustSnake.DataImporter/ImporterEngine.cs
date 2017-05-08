@@ -34,11 +34,8 @@
 
             var user = new User
             {
-                Name = "TestUser1",
-                Password = "12345",
-                HighScores = new List<HighScore>
-                {
-                }
+                Name = "qwerty",
+                Password = "qwerty",
             };
 
             db.Users.Add(user);
@@ -66,22 +63,24 @@
         {
             var db = new JustSnakeData();
 
-            var highscoreMap = db.Maps.All().FirstOrDefault();
+            //var highscoreMap = db.Maps.All().FirstOrDefault();
 
-            var highscoreUser = db.Users.All().FirstOrDefault();
+            var user = db.Users.All().FirstOrDefault();
 
             var highscore = new HighScore()
             {
                 Value = 100,
+                //User = user,
+                UserId = user.Id
                 //Map = highscoreMap,
                 //User = highscoreUser
             };
 
-            highscoreUser.HighScores.Add(highscore);
+            //user.HighScores.Add(highscore);
 
-            //db.HighScores.Add(highscore);
+            db.HighScores.Add(highscore);
 
-            db.Users.Update(highscoreUser);
+            //db.Users.Update(user);
 
             db.SaveChanges();
         }

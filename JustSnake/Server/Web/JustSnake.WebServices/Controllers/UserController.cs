@@ -47,11 +47,18 @@ namespace JustSnake.Services.Controllers
             }
 
             var content = this.CreateCookie(user.Name, user.Password, user.Id);
-
-            this.Data.Cookies.Add(new Cookie
+            var cookie = new Cookie
             {
-                Content = content,
-            });
+                Content = content
+            };
+
+            user.Cookies.Add(cookie);
+            this.Data.Users.Update(user);
+
+            //this.Data.Cookies.Add(new Cookie
+            //{
+            //    Content = content,
+            //});
 
             this.Data.SaveChanges();
             //if (!this.Data.SaveChanges())
@@ -59,7 +66,7 @@ namespace JustSnake.Services.Controllers
             //    return this.Badrequest("Could not save cookie");
             //}
 
-            return this.Ok(content);
+            return this.Ok(cookie.Content);
         }
 
         [EnableCors("MyPolicy")]
@@ -97,10 +104,20 @@ namespace JustSnake.Services.Controllers
 
             var content = this.CreateCookie(user.Name, user.Password, user.Id);
 
-            this.Data.Cookies.Add(new Cookie
+            var cookie = new Cookie
             {
                 Content = content,
-            });
+
+            };
+
+            user.Cookies.Add(cookie);
+            this.Data.Users.Update(user);
+
+            //this.Data.Cookies.Add(new Cookie
+            //{
+            //    Content = content,
+
+            //});
 
             this.Data.SaveChanges();
 
@@ -149,9 +166,50 @@ namespace JustSnake.Services.Controllers
                     IsDeleted = false
                 });
 
+            this.Data.Users.Update(user);
             Data.SaveChanges();
 
             return this.Ok();
+        }
+
+        [EnableCors("MyPolicy")]
+        [HttpGet("GetUserHighScores")]
+        public IActionResult GetUserHighScores()
+        {
+            var cookie = Request.Headers.FirstOrDefault(x => x.Key == "Authorization").Value;
+
+            if (!this.ValidateCookie(cookie))
+            {
+                return this.BadRequest("Invalid cookie!");
+            }
+
+            if (!this.ExtendCookie(cookie))
+            {
+                return this.BadRequest("Could not extend cookie!");
+            }
+
+            var decryptedCookie = this.DecryptString(cookie);
+            int index = decryptedCookie.LastIndexOf('-');
+            long userId = long.Parse(decryptedCookie.Substring(index + 1));
+
+            var user = this.Data.Users
+                .All()
+                .Where(x => x.IsDeleted == false &&
+                            x.Id == userId)
+                .FirstOrDefault();
+
+            if (user == null)
+            {
+                return this.BadRequest("No such user");
+            }
+
+            var scores = this.Data.HighScores
+                .All()
+                .Where(x => x.IsDeleted == false &&
+                            x.UserId == userId)
+                .ToList();
+
+            return this.Ok(scores);
         }
     }
 }

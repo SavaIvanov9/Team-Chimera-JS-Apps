@@ -3,7 +3,7 @@ import { data } from "data";
 
 class HomeController {
     initialize() {
-        alert("controller works");
+        //alert("controller works");
 
         $( "#signout-btn" ).on( "click", function() {
             alert("it works");

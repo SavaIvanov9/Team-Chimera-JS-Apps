@@ -19,6 +19,7 @@ SystemJS.config({
         'loginController': 'js/controllers/loginController.js',
         'registerController': 'js/controllers/registerController.js',       
         'gameController': 'js/controllers/gameController.js',
+        'endController': 'js/controllers/endController.js',
 
         // app start script
         'core': 'js/core.js'
