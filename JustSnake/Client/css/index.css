@@ -18,6 +18,7 @@ body {
     color: white;
 }
 
+
 /* Display Score Conrent DIV========================== */
 
 #scoreDisplay {
@@ -124,11 +125,14 @@ body {
 /*# homeScreen( Game Screens)========================================= */
 
 #homeScreen {
-    background: #00FF7F;
+    margin-top: 180px;
     border: solid 4px purple;
-    background-image:
+    background-image: url("../resources/Pics/snake.jpg");
+    background-repeat: no-repeat;
+    background-position: center top;
 }
 
 .home {
     border: 2px solid black;
+    margin-left: 140px;
 }
