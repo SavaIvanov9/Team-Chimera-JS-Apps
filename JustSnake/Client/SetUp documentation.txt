@@ -1,2 +1,3 @@
-1. npm install -g http-server 
-2. http-server ./ -p8181 //портът е допълнителен//
+1. Run JustSnake.WebServices project
+2. npm install -g http-server (if not installed)
+3. http-server ./ -p8181 

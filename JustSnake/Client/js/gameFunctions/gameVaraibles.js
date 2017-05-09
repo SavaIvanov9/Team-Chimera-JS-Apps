@@ -8,7 +8,6 @@ const variables = {
     snake: undefined,
     food: undefined,
     direction: undefined
-
 }
 
 export { variables };

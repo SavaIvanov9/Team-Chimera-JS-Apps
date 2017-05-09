@@ -3,7 +3,6 @@ import { variables } from 'variables';
 let $areaPic = $(document.createElement('img'))[0];
 //$areaPic.src = "./base.jpg";
 
-
 class Area {
     constructor(source) {
         this.source = source;

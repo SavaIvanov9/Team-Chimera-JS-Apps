@@ -28,7 +28,6 @@ const snakeGrowth = (function() {
 
         variables.ctx.clearRect(0, 0, variables.$width, variables.$height);
         gameloop = clearInterval(gameloop);
-
     }
 
     if (snakeX == variables.food.x && snakeY == variables.food.y) {

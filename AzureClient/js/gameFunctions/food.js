@@ -32,9 +32,7 @@ class GameObject {
             }
         }
     }
-
 }
-
 
 let dinner = new GameObject()
 
