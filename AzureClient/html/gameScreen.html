@@ -1,0 +1,60 @@
+<!-- Top green field-->
+<div class="header">
+    <div id="scoreDisplay"></div>
+</div>
+<!-- Orange sub-field containing the radio buttons-->
+<div id="nav">
+    <div class="col-sm-10">
+        <label class="radio-inline"> <input type="radio" name="season" id="garden"  checked> Easy </label>
+        <label class="radio-inline"> <input type="radio" name="season" id="winter" > Normal</label>
+        <label class="radio-inline"> <input type="radio" name="season" id="egypt"> Pro </label>
+    </div>
+</div>
+<!-- Left sidebar section-->
+<div class=" sidebar ">
+    <!-- top left box containing drop down info boards-->
+    <div id="panels">
+        <h2> &nbsp Snake Stories</h2>
+        <div>
+            Naga, in Hinduism, Buddhism, and Jainism, is a member of a class of mythical semidivine beings, half human and half cobra.
+        </div>
+
+        <h2> &nbsp How to Play</h2>
+        <div>
+            Use your arrow keys to navigate. Collect all pizza slices and avoid hitting the brown border and eating yourself.
+        </div>
+
+        <h2> &nbsp Share Your <br> &nbsp &nbsp &nbsp &nbspAchievments</h2>
+        <div>
+            You can share your highscore with all your friends.
+        </div>
+    </div>
+    <!-- Left box buttons-->
+    <div class="btn-group-vertical">
+        <button type="button" class="btn btn-primary" id="playnow">Play Now</button>`
+        <button type="button" class="btn btn-primary">Pause</button>`
+
+    </div>
+</div>
+<!-- Main window, contains canvas area where actual game zone is displayed-->
+
+<div class="main">
+    <canvas id="gameCanvas" width="584" height="500" style="border:7px solid #8B4513"></canvas>
+
+</div>
+<script>
+    $(document).ready(function() {
+        $("#panels").accordion({
+            collapsible: true
+        }, {
+            animate: 900
+        }, {
+            heightStyle: "content"
+        }, {
+            icons: {
+                header: "ui-icon-zoomin",
+                activeHeader: "ui-icon-zoomout"
+            }
+        });
+    });
+</script>

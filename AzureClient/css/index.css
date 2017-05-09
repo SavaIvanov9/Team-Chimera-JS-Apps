@@ -1,0 +1,156 @@
+body {
+    margin: 0px;
+}
+
+#container {
+    width: 968px;
+    margin: 0px auto;
+}
+
+
+/* HEADER section (top green field)========================== */
+
+.header {
+    background: #00FF7F;
+    height: 75px;
+    width: 800px;
+    border: solid 2px #000;
+    color: white;
+}
+
+
+/* Display Score Conrent DIV========================== */
+
+#scoreDisplay {
+    color: mediumvioletred;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bolder;
+}
+
+
+/* NAVIGATION section (Orange sub-field containing the radio buttons)====================== */
+
+#nav {
+    background: #F4A460;
+    height: 30px;
+    width: 800px;
+    border: solid 2px #000;
+    font-weight: bold;
+}
+
+
+/* RADIO BUTTONS (Check options in the orange top section ) ====================== */
+
+.col-sm-10 {
+    text-align: center;
+}
+
+.radio-inline {
+    font-weight: bolder;
+    color: green
+}
+
+
+/* SIDEBAR (left sidebar section)================================= */
+
+.sidebar {
+    float: left;
+    width: 198px;
+    height: 550px;
+    background: #008080;
+    border-left: solid 2px #000;
+    border-bottom: solid 2px #000;
+}
+
+
+/* PANELS ( top left box with infoboards)========================================= */
+
+#panels {
+    width: 180px;
+    padding: 3px;
+    margin: 6px;
+    background: #6A5ACD;
+    border: solid 2px black;
+}
+
+
+/* BUTTONS ( Left box buttons)========================================= */
+
+.btn.btn-primary {
+    color: white;
+    font-size: 15px;
+    font-weight: bolder;
+    background-color: #00FF7F;
+    border: 4px solid purple;
+    position: relative;
+    left: 30px;
+    top: 20px;
+}
+
+.btn.btn-danger:hover {
+    color: #ffffff;
+    background-color: #C12E2A;
+    background-image: linear-gradient(to bottom, #C12E2A, #C12E2A);
+    border-color: #28b877 #B92C28 #B92C28;
+}
+
+.btn-group-vertical>button {
+    margin-bottom: 15px;
+    border-radius: 10px !important;
+}
+
+
+/* MAIN ( main window where gamezone is displayed)========================================= */
+
+.main {
+    float: left;
+    width: 602px;
+    height: 550px;
+    background: #87CEEB;
+    border-right: solid 2px #000;
+    border-left: solid 2px #000;
+    border-bottom: solid 2px #000;
+    font-family: Arial;
+    font-size: 16px;
+    overflow: auto;
+}
+
+#gameCanvas {
+    width: auto;
+    height: auto;
+}
+
+
+/*# homeScreen( Game Screens)========================================= */
+
+#homeScreen {
+    margin-top: 180px;
+    border: solid 4px purple;
+    background-image: url("../resources/Pics/snake.jpg");
+    background-repeat: no-repeat;
+    background-position: center top;
+}
+
+.home {
+    border: 2px solid black;
+    margin-left: 140px;
+}
+
+
+/*#fb-root( End Screens)========================================= */
+
+#fb-root {
+    margin-top: 180px;
+}
+
+.modal-content {
+    margin-top: 180px;
+    border: solid 4px #28b877;
+}
+
+.endScreen {
+    background-image: url("../resources/Pics/snake1.jpg");
+    background-repeat: no-repeat;
+    background-position: center top;
+}
