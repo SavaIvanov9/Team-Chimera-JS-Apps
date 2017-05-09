@@ -3,14 +3,13 @@ import { requestManager } from 'requestManager';
 class ContentLoader {
 
     loadHtml(fileName, element) {
-        if(fileName == null) {
+        if (fileName == null) {
             fileName = "home";
         }
 
-        if(element == null) {
+        if (element == null) {
             element = "#container";
         }
-
         return requestManager.get(`html/${fileName}Screen.html`)
             .then((html) => {
                 $(element).html(html);
@@ -18,22 +17,19 @@ class ContentLoader {
     }
 
     loadController(fileName, element) {
-        if(fileName == null) {
+        if (fileName == null) {
             fileName = "home";
         }
-
-        if(element == null) {
+        if (element == null) {
             element = "#container";
         }
-
         $(element).append(`<script src="js/controllers/${fileName}Controller.js"></script>`);
     }
 
     addContent(content, element) {
-        if(element == null) {
+        if (element == null) {
             element = "#container";
         }
-
         $(element).append(content);
     }
 }

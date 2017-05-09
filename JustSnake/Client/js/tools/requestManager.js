@@ -8,9 +8,8 @@ class RequestManager {
             data: body,
             success: resolve,
             error: reject
-    }));
-
-    return promise;
+        }));
+        return promise;
     }
 
     get(url, headers = {}) {

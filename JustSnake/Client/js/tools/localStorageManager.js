@@ -21,10 +21,9 @@ class LocalStorageManager {
 
     getIsUserLogedIn() {
         var result = localStorage.getItem("IsUserLogedIn");
-        if(result == null) {
+        if (result == null) {
             result = false;
         }
-
         return result;
     }
 }

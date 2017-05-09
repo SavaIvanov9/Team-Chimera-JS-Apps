@@ -7,52 +7,45 @@ import { endController } from "endController";
 import { authenticator } from "authenticator";
 
 class ScreenSelector {
-     loadHome() {
+    loadHome() {
         contentLoader.loadHtml()
-            .then(() => { 
+            .then(() => {
                 homeController.initialize();
-            }
-        );
+            });
     }
 
     loadLogin() {
         contentLoader.loadHtml("login")
-            .then(() => { 
+            .then(() => {
                 loginController.initialize();
-            }
-        );       
+            });
     }
 
     loadRegister() {
         contentLoader.loadHtml("register")
-            .then(() => { 
+            .then(() => {
                 registerController.initialize();
-            }
-        );
+            });
     }
 
     loadGameScreen(sammy) {
-         var isUserLogedIn = authenticator.redirectIfNotLogedIn(sammy);
-         
-         if(isUserLogedIn === "true") {
+        var isUserLogedIn = authenticator.redirectIfNotLogedIn(sammy);
+        if (isUserLogedIn === "true") {
             contentLoader.loadHtml("game")
-                .then(() => { 
+                .then(() => {
                     gameController.initialize(sammy);
-                }
-            );
-         }
+                });
+        }
     }
 
     loadEndScreen(sammy) {
-         var isUserLogedIn = authenticator.redirectIfNotLogedIn(sammy);
-
-         if(isUserLogedIn === "true") {
+        var isUserLogedIn = authenticator.redirectIfNotLogedIn(sammy);
+        if (isUserLogedIn === "true") {
             contentLoader.loadHtml("end")
-                .then(() => { 
+                .then(() => {
                     endController.initialize(sammy);
-                }
-            );
-        } 
+                });
+        }
     }
 }
 
