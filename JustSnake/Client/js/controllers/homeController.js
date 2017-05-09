@@ -8,20 +8,9 @@ class HomeController {
             $( "#logout-btn" ).on( "click", function() {
                 localStorageManager.storeCookie(null);
                 localStorageManager.storeIsUserLogedIn(false);
-                contentLoader.addContent("loged out successfuly");
-            });
-
-            $( "#signout-btn" ).on( "click", function() {
-
-                contentLoader.addContent("test");
-
-                data.getUsers().then(
-                    (result) => {
-                        //var result = JSON.parse(users);
-                        contentLoader.addContent(result[0].id);
-                        console.log(result[0].id);
-                    }
-                );
+                alert("Loged out successfuly!");
+                //contentLoader.addContent("loged out successfuly");
+                //contentLoader.addContent(`<div class="alert alert-success"><strong>Success!</strong> This alert box could indicate a successful or positive action.</div>`);
             });
         });
     }

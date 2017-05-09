@@ -97,7 +97,9 @@ class GameController {
                     ctx.fillStyle = "black";
                     ctx.fillText('Game Over!', $width / 5, $height / 2);
 
-                    sammy.redirect('#/end');
+                    setTimeout(() => {
+                        sammy.redirect('#/end');
+                    }, 1000);
                 }
 
                 if (snakeX == food.x && snakeY == food.y) {

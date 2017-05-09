@@ -15,7 +15,7 @@ class EndController {
                     //var result = JSON.parse(users);
                     for(let i = 0; i < result.length; i++) {
                         contentLoader.addContent(`<p>Score: ${result[i].value}  -  Created on: ${result[i].createdOn}`, "#score-list");
-                        console.log(result[i].value);
+                        //console.log(result[i].value);
                     }
                 }
             );        
@@ -23,8 +23,8 @@ class EndController {
             $( "#save-btton" ).on( "click", function() {
                 data.saveScore(currentScore, sammy).then(
                     (result) => {
-                        alert("Score saved! ");
-                        console.log(result);
+                        alert(`Score ${currentScore} saved!`);
+                        //console.log(result);
                     }
                 ); 
             });

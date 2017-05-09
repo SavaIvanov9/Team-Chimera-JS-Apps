@@ -8,16 +8,25 @@ class RegisterController {
             $("#register-button").click(function() {
                 var name = $("#user").val();
                 var password = $("#pwd").val();         
-                alert(name + " " + password);           
+                //alert(name + " " + password);           
                 data.register(name, password).then(
                     (result) => {
+                        if(result !== "null") {
                         localStorageManager.storeCookie(result);
                         localStorageManager.storeIsUserLogedIn(true);
-                        contentLoader.addContent(result);
-                        console.log(result);
+                        // contentLoader.addContent(result);
+                        // console.log(result);
+                          $("#play-btn").css({"display":"block"});
+                        }
+                        else{
+                            alert("Log in unsuccessful! Entrer correct user and password!");
+                        }
                     }
-                );          
-                $("#play-btn").css({"display":"block"});
+                ); 
+
+                if(localStorageManager.getCookie() === "null"){
+                    alert("Log in unsuccessful! Entrer correct user and password!");
+                }
             })
         });
      }

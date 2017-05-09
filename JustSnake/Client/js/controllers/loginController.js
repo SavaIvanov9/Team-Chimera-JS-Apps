@@ -7,22 +7,28 @@ class LoginController {
         $(document).ready(function() {
             $("#log-in-button").click(function() {
                 var name = $("#user").val();
-                //var email = $("#pwd").val();
                 var password = $("#pwd").val();
-                //var cpassword = $("#cpassword").val();
 
-                alert(name + " " + password);
+                //alert(name + " " + password);
 
                 data.login(name, password).then(
-                    (result) => {            
-                        localStorageManager.storeCookie(result);
-                        localStorageManager.storeIsUserLogedIn(true);
-                        contentLoader.addContent(result);
-                        console.log(result);
+                    (result) => {
+                        if(result !== "null") {   
+                            localStorageManager.storeCookie(result);
+                            localStorageManager.storeIsUserLogedIn(true);
+                        // contentLoader.addContent(result);
+                        // console.log(result);
+                            $("#play-btn").css({"display":"block"});
+                        }
+                        else{
+                            alert("Log in unsuccessful! Entrer correct user and password!");
+                        }
                     }
                 );
 
-                $("#play-btn").css({"display":"block"});
+                if(localStorageManager.getCookie() === "null"){
+                    alert("Log in unsuccessful! Entrer correct user and password!");
+                }
             });
         });
     }
