@@ -17,3 +17,4 @@
 *.RTF	 diff=astextplain
 
 JustSnake\Client\html /* linguist-vendored
+Team-Chimera-JS-Apps/AzureClient/html/* linguist-vendored
